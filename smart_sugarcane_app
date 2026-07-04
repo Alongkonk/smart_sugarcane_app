@@ -65,3 +65,117 @@ reports/
       );
     }
   }
+  import 'package:flutter/material.dart';
+
+  class LoginScreen extends StatelessWidget {
+    const LoginScreen({super.key});
+
+    @override
+    Widget build(BuildContext context) {
+      return Scaffold(
+        body: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  "Smart Sugarcane",
+                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 20),
+                TextField(decoration: InputDecoration(labelText: "Username")),
+                TextField(
+                  decoration: InputDecoration(labelText: "Password"),
+                  obscureText: true,
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(context, '/dashboard');
+                  },
+                  child: const Text("Login"),
+                )
+              ],
+            ),
+          ),
+        ),
+      );
+    }
+  }
+  import 'package:flutter/material.dart';
+
+  class DashboardScreen extends StatelessWidget {
+    const DashboardScreen({super.key});
+
+    @override
+    Widget build(BuildContext context) {
+      return Scaffold(
+        appBar: AppBar(title: const Text("Dashboard")),
+        body: GridView.count(
+          crossAxisCount: 2,
+          padding: const EdgeInsets.all(10),
+          children: const [
+            Card(child: Center(child: Text("🚜 Fleet"))),
+            Card(child: Center(child: Text("🗺 GPS"))),
+            Card(child: Center(child: Text("📷 Inspection"))),
+            Card(child: Center(child: Text("📄 E-Contract"))),
+            Card(child: Center(child: Text("🔧 Maintenance"))),
+            Card(child: Center(child: Text("📊 Reports"))),
+          ],
+        ),
+      );
+    }
+  }<!DOCTYPE html>
+   <html>
+   <head>
+     <title>Smart Sugarcane Admin</title>
+     <style>
+       body { font-family: Arial; background:#0f172a; color:white; }
+       .card { padding:20px; margin:10px; background:#1e293b; border-radius:10px; }
+     </style>
+   </head>
+   <body>
+
+   <h1>🚜 Smart Sugarcane Admin</h1>
+
+   <div class="card">Fleet Management</div>
+   <div class="card">GPS Tracking</div>
+   <div class="card">E-Contract</div>
+   <div class="card">Reports</div>
+
+   </body>
+   </html>
+   Create a modern agricultural technology landing page for "Smart Sugarcane Platform".
+
+   Hero section:
+   - Full screen sugarcane harvester field
+   - Dark overlay 40%
+   - Title: Smart Sugarcane App
+   - Subtitle: Intelligent Farm & Fleet Management System
+   - Buttons: Try Now / View System
+   
+   Sections:
+   1. Features (GPS, Inspection, E-Contract, Dashboard, AI)
+   2. Fleet 70 machines overview
+   3. Real-time tracking
+   4. KPI dashboard preview
+   5. Contact section
+
+   Style:
+   - Glassmorphism
+   - Green tech theme
+   - Modern enterprise UI
+   - Animation scroll
+   flutterfire configure
+   dependencies:
+     flutter:
+       sdk: flutter
+
+     firebase_core: ^3.0.0
+     cloud_firestore: ^5.0.0
+     firebase_auth: ^5.0.0
+
+     geolocator: ^13.0.0
+     google_maps_flutter: ^2.6.0
+     flutter pub get
